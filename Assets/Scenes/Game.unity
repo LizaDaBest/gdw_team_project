@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &650279425
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -547,6 +547,10 @@ PrefabInstance:
     - target: {fileID: 1824627132948659668, guid: 73cf56b3326552948b3b9be29268eb40, type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824627132948659668, guid: 73cf56b3326552948b3b9be29268eb40, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5327425704732314473, guid: 73cf56b3326552948b3b9be29268eb40, type: 3}
       propertyPath: m_LocalPosition.x
