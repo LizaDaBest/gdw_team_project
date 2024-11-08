@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4044132240668530007}
   - component: {fileID: 4118482629678179659}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6505804824816570771}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006170608, y: 0.006170608, z: -0.7070799, w: 0.7070799}
+  m_LocalRotation: {x: 0.006170608, y: 0.006170608, z: 0.7070799, w: 0.7070799}
   m_LocalPosition: {x: 1.22, y: 1.83, z: 0.37}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 1, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 90}
 --- !u!33 &3984698881498254262
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveForwardPizza : MonoBehaviour
+public class MoveForward : MonoBehaviour
 {
     public float speed = 10.0f;
 

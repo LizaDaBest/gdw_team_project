@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1 : MonoBehaviour
+public class Player1Controller : MonoBehaviour
 
 {
 
@@ -16,7 +16,8 @@ public class Player1 : MonoBehaviour
     private float speed = 20.0f;
     private float horizontalInput;
     private float forwardInput;
-    public float xRange = 10.0f;
+    public float xleft = 10.0f;
+    public float xRight = -1.0f;
     public float zRange = 10.0f;
 
 
@@ -33,14 +34,14 @@ public class Player1 : MonoBehaviour
 
         // keep Ply1 in bounds left aand right
 
-        if (transform.position.x < -xRange)
+        if (transform.position.x < -xleft)
         {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-xleft, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.x > xRange)
+        if (transform.position.x > xRight)
         {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xRight, transform.position.y, transform.position.z);
         }
 
         if (transform.position.z < -zRange)
@@ -52,33 +53,33 @@ public class Player1 : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime);
+        //horizontalInput = Input.GetAxis("Horizontal");
+        //transform.Translate(Vector3.right * horizontalInput * Time.deltaTime);
 
-        // keep Ply1 in bounds up and down
+        //// keep Ply1 in bounds up and down
 
-        if (transform.position.x < -xRange)
-        {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }
+        //if (transform.position.x < -xRange)
+        //{
+        //    transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        //}
 
-        if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        }
-        horizontalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward * forwardInput * Time.deltaTime);
+        //if (transform.position.x > xRange)
+        //{
+        //    transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        //}
+        //horizontalInput = Input.GetAxis("Vertical");
+        //transform.Translate(Vector3.forward * forwardInput * Time.deltaTime);
 
         // shooting
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
-            Rigidbody2D rb = projectilePrefab.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+           // Rigidbody2D rb = projectilePrefab.GetComponent<Rigidbody2D>();
+            //if (rb != null)
             {
-                float projectileSpeed = 10f;
-                rb.velocity = transform.right * projectileSpeed;
+                //float projectileSpeed = 10f;
+                //rb.velocity = transform.right * projectileSpeed;
             }
         }
     }

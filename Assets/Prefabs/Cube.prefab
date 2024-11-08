@@ -118,9 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e955a3490239294caba08d61392f2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  projectileprefab: {fileID: 0}
-  Player1: {fileID: 0}
 --- !u!1 &1416209078426409111
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,9 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e955a3490239294caba08d61392f2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  projectileprefab: {fileID: 0}
-  Player1: {fileID: 0}
 --- !u!1 &1824627132948659668
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +249,7 @@ GameObject:
   - component: {fileID: 3099999604071689917}
   - component: {fileID: 5592383546268401270}
   - component: {fileID: 3063437745141115839}
+  - component: {fileID: 6709654090754730670}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -367,9 +362,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e955a3490239294caba08d61392f2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1824627132948659668}
-  projectileprefab: {fileID: 6505804824816570771, guid: 248cc0124e8f63944bcdc4883685422f, type: 3}
-  Player1: {fileID: 0}
+--- !u!54 &6709654090754730670
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824627132948659668}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1900976563564773509
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,9 +507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e955a3490239294caba08d61392f2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  projectileprefab: {fileID: 0}
-  Player1: {fileID: 0}
 --- !u!1 &2414687839892327750
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,9 +625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e955a3490239294caba08d61392f2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  projectileprefab: {fileID: 0}
-  Player1: {fileID: 0}
 --- !u!1 &3237767906919353552
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,9 +743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e955a3490239294caba08d61392f2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  projectileprefab: {fileID: 0}
-  Player1: {fileID: 0}
 --- !u!1 &6059398374142334699
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,9 +861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e955a3490239294caba08d61392f2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  projectileprefab: {fileID: 0}
-  Player1: {fileID: 0}
 --- !u!1 &8139630216243684456
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,6 +979,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e955a3490239294caba08d61392f2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  projectileprefab: {fileID: 0}
-  Player1: {fileID: 0}
