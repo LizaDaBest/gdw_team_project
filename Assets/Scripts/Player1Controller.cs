@@ -22,6 +22,7 @@ public class Player1Controller : MonoBehaviour
 
 
     public GameObject projectilePrefab;
+    public Transform projectileSpawnpoint;
 
     void Update()
     {
@@ -74,7 +75,7 @@ public class Player1Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawnpoint.position, projectilePrefab.transform.rotation);
            // Rigidbody2D rb = projectilePrefab.GetComponent<Rigidbody2D>();
             //if (rb != null)
             {

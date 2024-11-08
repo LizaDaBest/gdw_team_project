@@ -17,4 +17,12 @@ public class MoveForward : MonoBehaviour
     {
         transform.Translate(Vector3.up * Time.deltaTime * speed);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag=="Player")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

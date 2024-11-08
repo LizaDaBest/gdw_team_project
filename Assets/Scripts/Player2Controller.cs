@@ -22,12 +22,13 @@ public class Player2Controller : MonoBehaviour
 
 
     public GameObject projectilePrefab;
+    public Transform projectileSpawnpoint;
 
     void Update()
     {
         forwardInput = Input.GetAxis("Vertical 2");
         // Moves the Ply2 forward basedf on virtical input
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+        transform.Translate(Vector3.back * Time.deltaTime * speed * forwardInput);
         // Moves the Ply2 left and right based on horizontal input
         horizontalInput = Input.GetAxis("Horizontal 2");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
@@ -75,7 +76,7 @@ public class Player2Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
 
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawnpoint.position, projectilePrefab.transform.rotation);
             //Rigidbody2D rb = projectilePrefab.GetComponent<Rigidbody2D>();
             //if (rb != null)
             //{
