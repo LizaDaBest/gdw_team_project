@@ -67,11 +67,12 @@ public class Player1 : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
         horizontalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * forwardInput * Time.deltaTime);
+        transform.Translate(Vector3.forward * forwardInput * Time.deltaTime);
 
         // shooting
         if (Input.GetKeyDown(KeyCode.Space))
         {
+
             Instantiate(projectilePrefab, transform.position, transform.rotation);
             Rigidbody2D rb = projectilePrefab.GetComponent<Rigidbody2D>();
             if (rb != null)
