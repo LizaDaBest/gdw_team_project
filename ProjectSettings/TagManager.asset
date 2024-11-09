@@ -8,6 +8,7 @@ TagManager:
   - Target
   - Target 1
   - Target 2
+  - Powerup
   layers:
   - Default
   - TransparentFX

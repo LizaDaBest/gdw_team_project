@@ -19,7 +19,7 @@ public class Player1Controller : MonoBehaviour
     public float xleft = 10.0f;
     public float xRight = -1.0f;
     public float zRange = 10.0f;
-
+    public bool hasPowerup = false;
 
     public GameObject projectilePrefab;
     public Transform projectileSpawnpoint;
@@ -84,5 +84,15 @@ public class Player1Controller : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+      if(other.CompareTag("Powerup"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+        }
+    }
+
 }
 

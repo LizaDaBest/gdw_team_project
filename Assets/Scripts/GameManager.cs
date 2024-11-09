@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI gameOverText2;
+    public Button restartButton;
     void Start()
     {
         // StartCoroutine(SpawnTarget());
@@ -54,11 +57,21 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        restartButton.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(true);
     }
     // Update is called once per frame
     void Update()
     {
-        
+      if(Input.GetKeyUp(KeyCode.Alpha1))
+        {
+          RestartGame();
+        }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
+
