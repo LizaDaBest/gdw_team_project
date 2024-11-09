@@ -9,17 +9,19 @@ public class Player2Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     private float speed = 20.0f;
     private float horizontalInput;
     private float forwardInput;
+    private AudioSource playerAudio;
     public float xleft = 10.0f;
     public float xRight = -1.0f;
     public float zRange = 10.0f;
     public bool hasPowerup = false;
+    public AudioClip shootSound;
 
 
     public GameObject projectilePrefab;
@@ -78,11 +80,12 @@ public class Player2Controller : MonoBehaviour
         {
 
             Instantiate(projectilePrefab, projectileSpawnpoint.position, projectilePrefab.transform.rotation);
+            playerAudio.PlayOneShot(shootSound, 1.0f);
             //Rigidbody2D rb = projectilePrefab.GetComponent<Rigidbody2D>();
             //if (rb != null)
             //{
-              //  float projectileSpeed = 10f;
-                //rb.velocity = transform.right * projectileSpeed;
+            //  float projectileSpeed = 10f;
+            //rb.velocity = transform.right * projectileSpeed;
             //}
         }
     }
