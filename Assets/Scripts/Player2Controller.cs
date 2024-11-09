@@ -19,6 +19,7 @@ public class Player2Controller : MonoBehaviour
     public float xleft = 10.0f;
     public float xRight = -1.0f;
     public float zRange = 10.0f;
+    public bool hasPowerup = false;
 
 
     public GameObject projectilePrefab;
@@ -84,5 +85,23 @@ public class Player2Controller : MonoBehaviour
                 //rb.velocity = transform.right * projectileSpeed;
             //}
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Powerup"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+            StartCoroutine(PowerupCountdownRoutine());
+        }
+    }
+
+    IEnumerator PowerupCountdownRoutine()
+    {
+        speed = 40.0f;
+        yield return new WaitForSeconds(10);
+        hasPowerup = false;
+        speed = 20.0f;
     }
 }

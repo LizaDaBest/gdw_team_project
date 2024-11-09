@@ -18,12 +18,16 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI gameOverText2;
     public Button restartButton;
+    public GameObject Powerup;
+    private float spawnRangeX = 10;
+    private float spawnRangeZ = 10;
     void Start()
     {
         // StartCoroutine(SpawnTarget());
         // [System.Serializable];
         Score1 = 4;
         Score2 = 4;
+        StartCoroutine(SpawnPowerUp());
     }
 
     //IEnumerator SpawnTarget()
@@ -73,5 +77,20 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    IEnumerator SpawnPowerUp ()
+    {
+        float waitime = Random.Range(10.0f, 20.0f);
+        yield return new WaitForSeconds(waitime);
+
+        Vector3 SpawnRange = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0.5f, (Random.Range(-spawnRangeZ, spawnRangeZ)));
+
+        Instantiate(Powerup, SpawnRange, Powerup.transform.rotation);
+     
+        StartCoroutine(SpawnPowerUp());
+
+
+    }
 }
+
 

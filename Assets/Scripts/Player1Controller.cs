@@ -91,8 +91,17 @@ public class Player1Controller : MonoBehaviour
         {
             hasPowerup = true;
             Destroy(other.gameObject);
+            StartCoroutine(PowerupCountdownRoutine());
         }
     }
 
+
+    IEnumerator PowerupCountdownRoutine()
+    {
+        speed = 40.0f;
+        yield return new WaitForSeconds(10);
+        hasPowerup = false;
+        speed = 20.0f;
+    }
 }
 
