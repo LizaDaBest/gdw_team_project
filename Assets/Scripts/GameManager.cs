@@ -17,30 +17,36 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI gameOverText2;
+    public TextMeshProUGUI titleScreen;
     public Button restartButton;
     public GameObject Powerup;
     private float spawnRangeX = 10;
     private float spawnRangeZ = 10;
+    public TextMeshProUGUI titleText;
     void Start()
     {
-        // StartCoroutine(SpawnTarget());
-        // [System.Serializable];
+        titleText.gameObject.SetActive(true);
+        Invoke("HideTitleText", 5f);
+        Cursor.visible = false;
         Score1 = 4;
         Score2 = 4;
         StartCoroutine(SpawnPowerUp());
     }
 
-    //IEnumerator SpawnTarget()
-    //{
-    //    while (true)
-    //    {
-    //        yield return new WaitForSeconds(spawnRate);
-    //        int index = Random.Range(0, targets.Count);
-    //        Instantiate(targets[index]);
-    //        UpdateScore(-1);
-    //    }
-    //}
+    // RESETTING SCENE AFTER TITLE NEEDS FIXING, MAYBE...
+    void HideTitleText()
+    {
+        titleText.gameObject.SetActive(false);
+    }
 
+   // void StartupGameAfterTitle()
+   // {
+
+      //  if (GameManager.HideTitleText(true))
+      //  {
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      //  }
+   // }
     public void UpdateScore(int scoreToAdd)
     {
         Score1 += scoreToAdd;
@@ -67,10 +73,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(Input.GetKeyUp(KeyCode.Alpha1))
+        if (Input.GetKeyUp(KeyCode.Return))
         {
-          RestartGame();
+            RestartGame();
         }
+
     }
 
     public void RestartGame()
@@ -78,7 +85,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    IEnumerator SpawnPowerUp ()
+    IEnumerator SpawnPowerUp()
     {
         float waitime = Random.Range(10.0f, 20.0f);
         yield return new WaitForSeconds(waitime);
@@ -86,9 +93,20 @@ public class GameManager : MonoBehaviour
         Vector3 SpawnRange = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0.5f, (Random.Range(-spawnRangeZ, spawnRangeZ)));
 
         Instantiate(Powerup, SpawnRange, Powerup.transform.rotation);
-     
+
         StartCoroutine(SpawnPowerUp());
 
+
+    }
+
+    public void QuitGame()
+    {
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            // or if (Input.GetButtonUp("Cancel")) {
+            Application.Quit();
+        }
 
     }
 }
