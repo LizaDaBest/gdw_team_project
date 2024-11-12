@@ -78,6 +78,12 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            // or if (Input.GetButtonUp("Cancel")) {
+            Application.Quit();
+        }
+
     }
 
     public void RestartGame()
@@ -96,17 +102,6 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(SpawnPowerUp());
 
-
-    }
-
-    public void QuitGame()
-    {
-
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            // or if (Input.GetButtonUp("Cancel")) {
-            Application.Quit();
-        }
 
     }
 }
