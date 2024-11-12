@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         titleText.gameObject.SetActive(true);
-        Invoke("HideTitleText", 5f);
+        Invoke("HideTitleText", 3f);
         Cursor.visible = false;
         Score1 = 4;
         Score2 = 4;
